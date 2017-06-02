@@ -1,0 +1,81 @@
+player = codesters.Sprite("cat")
+
+computer = codesters.Sprite("computer")
+
+player.go_to(-100, -75)
+
+computer.go_to(125, -75)
+
+# text = codesters.Text("text", x, y)
+
+result = codesters.Text("Hello up here.", 0, 200)
+
+choice = player.ask("Choose rock, paper, or scissors.")
+
+player.say(choice)
+
+if choice == "rock":
+    sprite = codesters.Sprite("rock")
+    player.say("I choose rock")
+
+
+
+if choice == "paper":
+    sprite = codesters.Sprite("paper")
+    player.say("I choose paper")
+
+
+
+if choice == "scissors":
+    sprite = codesters.Sprite("scissors")
+    player.say("I choose scissors")
+    sprite.go_to(-125, 140)
+    
+random_choice = random.randint(1,3)
+
+if random_choice == 1:
+    sprite = codesters.Sprite("rock")
+    computer.say("I choose rock")
+    computer_choice = "rock"
+
+if random_choice == 2:
+    sprite = codesters.Sprite("paper")
+    computer.say("I choose paper")
+    computer_choice = "paper"
+
+if random_choice == 3:
+    sprite = codesters.Sprite("scissors")
+    computer.say("I choose scissors")
+    computer_choice = "scissors"
+
+sprite.go_to(125, 140)
+
+if choice == "rock" and computer_choice == "rock":
+    result.set_text("Tie Game!")
+
+if choice == "rock" and computer_choice == "paper":
+    result.set_text("Computer wins!")
+
+if choice == "rock" and computer_choice == "scissors":
+    result.set_text("Player wins!")
+
+if choice == "paper" and computer_choice == "rock":
+    result.set_text("Player wins!")
+
+if choice == "paper" and computer_choice == "paper":
+    result.set_text("Tie Game!")
+
+if choice == "paper" and computer_choice == "scissors":
+    result.set_text("Computer wins!")
+
+if choice == "scissors" and computer_choice == "rock":
+    result.set_text("Computer wins!")
+
+if choice == "scissors" and computer_choice == "paper":
+    result.set_text("Player wins!")
+
+if choice == "scissors" and computer_choice == "scissors":
+    result.set_text("Tie Game!")
+
+
+
